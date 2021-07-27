@@ -41,6 +41,8 @@ button:focus {
   cursor: pointer;
   /* 외각 라인 삭제 */
   outline: none;
+
+  background-color: var(--white-color);
 }
 
 header {
@@ -52,7 +54,6 @@ header {
 }
 
 header .logo {
-  flex-direction: row;
   font-size: var(--font-large);
   font-weight: bold;
 }
@@ -111,14 +112,59 @@ header .icons .fa-search {
 
 .info .metadata .titleAndButton .title {
   /*한줄  고정 넘을 경우에는 .... vytl */
+  /* EXAMPLE */
   font-size: var(--font-medium);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+  margin-right: var(--side-padding);
 }
 
 .info .metadata .titleAndButton .morebtn {
   /* 버튼 위로  고정 */
   height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--side-padding) 0;
+}
+
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.actions button i {
+  margin: 0 auto;
+  /* 나눗기 할때 사용 */
+  margin-bottom: calc(var(--side-padding) / 2);
+  font-size: 16px;
+}
+
+.actions button i.active {
+  color: var(--blue-color);
+}
+
+.channel {
+  display: flex;
+}
+
+.channel .metadata {
+  display: flex;
+}
+
+.channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
 }
