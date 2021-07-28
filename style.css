@@ -92,7 +92,7 @@ header .icons .fa-search {
   max-height: 600px;
 }
 
-.info {
+body > .info {
   padding: var(--side-padding);
 }
 
@@ -132,39 +132,125 @@ header .icons .fa-search {
 }
 
 /* Action Buttons */
-.actions {
+.info .actions {
   display: flex;
   justify-content: space-around;
   margin: var(--side-padding) 0;
 }
 
-.actions button {
+.info .actions button {
   display: flex;
   flex-direction: column;
   font-size: var(--font-small);
   color: var(--grey-dark-color);
 }
 
-.actions button i {
+.info .actions button i {
   margin: 0 auto;
   /* 나눗기 할때 사용 */
   margin-bottom: calc(var(--side-padding) / 2);
   font-size: 16px;
 }
 
-.actions button i.active {
+.info .actions button i.active {
   color: var(--blue-color);
 }
 
-.channel {
+.info .channel {
   display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
 }
 
-.channel .metadata {
+.info .channel .metadata {
   display: flex;
+  align-items: center;
 }
 
-.channel .metadata img {
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .channel .metadata img {
   width: var(--avatar-size);
   height: var(--avatar-size);
+  /* 이미지 원으로 처리 */
+  border-radius: 50%;
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+  /* 소문자 -> 데문자 처리 */
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up Next */
+.upNext {
+  padding: 0 var(--side-padding);
+}
+/* 바로 자식에 효과 적용 */
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--side-padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--side-padding);
+}
+/* 화면 간격 구성 */
+.upNext .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--side-padding);
+}
+/* 이미지 간격 채우기 */
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .morebtn {
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    min-width: var(--side-padding);
+  }
 }
