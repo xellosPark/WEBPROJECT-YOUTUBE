@@ -114,16 +114,25 @@ body > .info {
   /*한줄  고정 넘을 경우에는 .... vytl */
   /* EXAMPLE */
   font-size: var(--font-medium);
+  margin-right: var(--side-padding);
+}
+
+.info .metadata .titleAndButton .title.clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
-  margin-right: var(--side-padding);
 }
 
-.info .metadata .titleAndButton .morebtn {
+.info .metadata .titleAndButton .moreBtn {
   /* 버튼 위로  고정 */
   height: 100%;
+  /* 애니메이션 효과 */
+  transition: transform 300ms ease-in-out;
+}
+/* 토글된 순가 아이콘 상하 위치 변경 */
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
 }
 
 .info .views {
